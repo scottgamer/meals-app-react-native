@@ -1,7 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ImageBackground
+} from 'react-native';
 
-const MealItem = (props) => {
+const MealItem = props => {
   return (
     <View style={styles.mealItem}>
       <TouchableOpacity onPress={props.onSelectMeal}>
@@ -9,9 +15,12 @@ const MealItem = (props) => {
           <View style={{ ...styles.mealRow, ...styles.mealHeader }}>
             <ImageBackground
               source={{ uri: props.image }}
-              style={styles.bgImage} >
+              style={styles.bgImage}
+            >
               <View style={styles.titleContainer}>
-                <Text style={styles.title} numberOfLines={1}>{props.title}</Text>
+                <Text style={styles.title} numberOfLines={1}>
+                  {props.title}
+                </Text>
               </View>
             </ImageBackground>
           </View>
@@ -35,7 +44,8 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#f5f5f5',
     borderRadius: 10,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    marginVertical: 10
   },
   mealHeader: {
     height: '85%'
@@ -49,12 +59,12 @@ const styles = StyleSheet.create({
   bgImage: {
     width: '100%',
     height: '100%',
-    justifyContent: "flex-end"
+    justifyContent: 'flex-end'
   },
   titleContainer: {
     backgroundColor: 'rgba(0,0,0,0.5)',
     paddingHorizontal: 5,
-    paddingVertical: 12,
+    paddingVertical: 12
   },
   title: {
     fontFamily: 'open-sans-bold',
